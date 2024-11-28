@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Bites</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #ffffff; /* White background */
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+        header {
+            background: #284bf8; /* Red color */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position:sticky ;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        nav a:hover {
+            background: #f7f7f8; /* Yellow background on hover */
+            color: #040319; /* Red text on hover */
+            transform: scale(1.05); /* Slightly enlarge the link */
+        }
+        .hero {
+            background-color: #ff3b30; /* Red background */
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            animation: fadeIn 2s; /* Fade in animation */
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 5; }
+        }
+        .cta-button {
+            background: white;
+            color: #ff3b30; /* Red text */
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor:url(https://www.shutterstock.com/shutterstock/photos/361875593/display_1500/stock-vector-eye-icon-illustration-361875593.jpg) auto;
+            font-size: 1.2em;
+            margin-top: 15px;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+        }
+        .cta-button:hover {
+            background: #f9f9f6; /* Yellow background on hover */
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase shadow */
+        }
+        .about-menu-container,
+        .reviews-container,
+        .contact-container,
+        .logos-container {
+            position: relative;
+            height: auto; /* Set to auto for flexibility */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            margin: 0;
+            overflow: hidden; /* Hide overflow for rounded corners */
+        }
+        .about-menu-container h2,
+        .reviews-container h2,
+        .contact-container h2,
+        .logos-container h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #ff3b30; /* Red color for headers */
+            animation: slideIn 1s; /* Slide in animation */
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .about,
+        .menu,
+        .reviews,
+        .contact {
+            text-align: center; /* Center align text */
+            margin: 20px 0;
+        }
+        .menu-item,
+        .review-item {
+            margin: 15px 0;
+            font-size: 1.2em;
+            color: #333;
+            transition: background 0.3s, color 0.3s, transform 0.3s;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .menu-item:hover,
+        .review-item:hover {
+            background-color: white; /* White background on hover */
+            color: #ff3b30; /* Red text on hover */
+            transform: translateY(-3px); /* Lift effect on hover */
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #333;
+            color: white;
+        }
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cover the entire container */
+            z-index: -1; /* Send video behind content */
+            filter: brightness(60%); /* Darken video for better text visibility */
+        }
+        .content {
+            position: relative; /* Position content relative to container */
+            z-index: 1; /* Bring content in front of video */
+            text-align: center; /* Center the content */
+            color: white; /* White text for visibility */
+            backdrop-filter: blur(5px); /* Optional: Add a blur effect to the background */
+        }
+        .logo {
+    width: 150px; /* Fixed width for logo container */
+    height: 150px; /* Fixed height for logo container */
+    overflow: hidden; /* Hide overflow for rounded corners */
+    border-radius: 50%; /* Make the container rounded */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+    transition: transform 0.3s; /* Transition effect for hover */
+}
+
+.logo img {
+    width: 100%; /* Make image take full width of container */
+    height: 100%; /* Make image take full height of container */
+    object-fit: cover; /* Ensure image covers the container */
+    filter: grayscale(100%); /* Grayscale effect for logos */
+    transition: filter 0.3s; /* Transition effect for hover */
+}
+
+.logo img:hover {
+    filter: grayscale(0%); /* Color on hover */
+}
+
+.logo:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>Delicious Bites</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about-menu">About Us & Menu</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<div class="hero" id="home">
+    <h1>Welcome to Delicious Bites</h1>
+    <p>Your destination for mouth-watering meals and delightful flavors!</p>
+    <button class="cta-button" onclick="alert('Reservation made!')">Reserve a Table</button>
+</div>
+
+<div class="logos-container">
+    <h2>Explore Our Delicious</h2>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-2 logo">
+                <img src="1pic.jpg" alt="Uber Eats Logo">
+            </div>
+            <div class="col-md-2 logo">
+                <img src="2pic.jpg" alt="DoorDash Logo">
+            </div>
+            <div class="col-md-2 logo">
+                <img src="3oic.jpg" alt="Grubhub Logo">
+            </div>
+            <div class="col-md-2 logo">
+                <img src="4pic.jpg" alt="Postmates Logo">
+            </div>
+            <div class="col-md-2 logo">
+                <img src="5pic.jpg" alt="Just Eat Logo">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="about-menu-container" id="about-menu">
+    <video autoplay muted loop class="video-background">
+        <source src="Making a pizza - reels(720P_HD).mp4" type="video/mp4"> <!-- Replace with your video URL -->
+        Your browser does not support the video tag.
+    </video>
+    <div class="content">
+        <div class="about">
+            <h2>About Us</h2>
+            <p>At Delicious Bites, we believe in serving dishes that delight the senses and bring people together. Our chefs use the finest ingredients to create a diverse menu that caters to all ages and preferences. Come experience our culinary magic!</p>
+        </div>
+
+        <div class="menu">
+            <h2>Our Menu</h2>
+            <div class="menu-item">🍕 Margherita Pizza - $12</div>
+            <div class="menu-item">🍝 Spaghetti Carbonara - $14</div>
+            <div class="menu-item">🥗 Caesar Salad - $10</div>
+            <div class="menu-item">🍔 Gourmet Burger - $15</div>
+            <div class="menu-item">🍰 Chocolate Cake - $7</div>
+            <div class="menu-item">🍦 Ice Cream Sundae - $5</div>
+        </div>
+    </div>
+</div>
+
+<div class="reviews-container" id="reviews">
+    <h2>Customer Reviews</h2>
+    <div class="review-item">⭐️⭐️⭐️⭐️⭐️ "The best pizza in town!" - Sarah</div>
+    <div class="review-item">⭐️⭐️⭐️⭐️ "Delicious and fresh ingredients!" - Mark</div>
+    <div class="review-item">⭐️⭐️⭐️⭐️⭐️ "A delightful dining experience!" - Emma</div>
+</div>
+
+<div class="contact-container" id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:info@deliciousbites.com">info@deliciousbites.com</a></p>
+    <p>Phone: +1 234 567 890</p>
+    <p>Address: 123 Flavor Street, Food Town, FT 12345</p>
+</div>
+
+<footer>
+    <p>&copy; 2024 Delicious Bites. All rights reserved.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
